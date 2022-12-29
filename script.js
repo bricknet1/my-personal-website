@@ -9,19 +9,79 @@ document.querySelector("body").appendChild(h2);
 
 */
 
+/////////////////////
+
+// move my face
 const bigFace = document.getElementById("avatar");
 
 function moveFace() {
-    const randX = Math.floor(Math.random() * (window.innerWidth - 100));
-    const randY = Math.floor(Math.random() * (window.innerHeight - 100));
+    let randX = Math.floor(Math.random() * (window.innerWidth - 100));
+    let randY = Math.floor(Math.random() * (window.innerHeight - 100));
+    let move = [
+        {left: randX + "px", top: randY + "px"}
+    ]
+    let rotate360 = [
+        {transform: 'rotate(360deg)'}
+    ];
+    let speed = {
+        duration: 500,
+        iterations: 1
+    }
     console.log([randX, randY]);
-    bigFace.animate({"left": randX + "px", "top": randY + "px"});
-}
-
-function gotMe() {
-    alert("Got me!")
+    bigFace.animate(rotate360, speed);
+    bigFace.animate(move);
 }
 
 bigFace.addEventListener("mouseover", moveFace);
-bigFace.addEventListener("click", gotMe)
 
+
+
+//////////////////
+
+// photo pop up
+const modal = document.getElementById("myModal");
+const img = document.getElementById("singing");
+const modalImg = document.getElementById("avatar");
+const captionText = document.getElementById("caption");
+function gotMe() {
+    modal.style.display = "block";
+    modalImg.src = avatar.src;
+    captionText.innerHTML = `"${singing.alt}." -Nick Johnson, 2/29/20`;
+}
+const span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}
+bigFace.addEventListener("click", gotMe)
+/////////////////////
+
+
+
+
+///////////////test button stuff below here////////////////
+
+const button = document.getElementById("emcee");
+
+let randX = Math.floor(Math.random() * (window.innerWidth - 100));
+let randY = Math.floor(Math.random() * (window.innerHeight - 100));
+let move = [
+    {left: randX + "px", top: randY + "px"}
+]
+let rotate360 = [
+    {transform: 'rotate(360deg)'}
+];
+let speed = {
+    duration: 500,
+    iterations: 1
+}
+
+function moveButton() {
+//    let randX = Math.floor(Math.random() * (window.innerWidth - 100));
+//    let randY = Math.floor(Math.random() * (window.innerHeight - 100));
+//    console.log([randX, randY]);
+    button.animate(rotate360, speed);
+    button.animate(move);
+    console.log(move);
+}
+
+button.addEventListener("click", moveButton)
