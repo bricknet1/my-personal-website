@@ -15,23 +15,26 @@ document.querySelector("body").appendChild(h2);
 const bigFace = document.getElementById("avatar");
 
 function moveFace() {
-    let randX = Math.floor(Math.random() * (window.innerWidth - 100));
-    let randY = Math.floor(Math.random() * (window.innerHeight - 100));
-    let move = [
-        {left: randX + "px", top: randY + "px"}
-    ]
+    let randX = Math.floor(Math.random() * (window.innerWidth - 150));
+    let randY = Math.floor(Math.random() * (window.innerHeight - 150));
+    let move = [{left: randX + "px", top: randY + "px"}, {duration: 500}]
     let rotate360 = [
         {transform: 'rotate(360deg)'}
     ];
     let speed = {
         duration: 500,
         iterations: 1
+    };
+    function animationComplete() {
+        bigFace.style.left = `${randX}px`;
+        bigFace.style.top = `${randY}px`
     }
+    let stopFace = animationComplete;
     console.log([randX, randY]);
     bigFace.animate(rotate360, speed);
-    bigFace.animate(move);
+    let faceMoving = bigFace.animate(...move);
+    faceMoving.finished.then(() => animationComplete());
 }
-
 bigFace.addEventListener("mouseover", moveFace);
 
 
@@ -59,7 +62,7 @@ bigFace.addEventListener("click", gotMe)
 
 
 ///////////////test button stuff below here////////////////
-
+/*
 const button = document.getElementById("emcee");
 
 let randX = Math.floor(Math.random() * (window.innerWidth - 100));
@@ -85,3 +88,4 @@ function moveButton() {
 }
 
 button.addEventListener("click", moveButton)
+*/

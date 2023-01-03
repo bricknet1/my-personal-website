@@ -13,6 +13,10 @@ img#avatar {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+    position: absolute;
+    left: 45%;
+    top: 10px;
+    z-index: 0;
 }
 
 button#emcee
@@ -20,8 +24,6 @@ button#emcee
     position: relative;
     z-index: 2;   
 }
-
-
 
 /* The Modal (background) */
 .modal {
