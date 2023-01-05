@@ -1,12 +1,17 @@
 body {
     background: lightgreen;
-    padding: 5%;
+    padding: 50px;
 }
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150px;
     margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#title {
+  rotate: 0deg;
 }
 
 img#avatar {
@@ -14,16 +19,17 @@ img#avatar {
     height: 150px;
     width: 150px;
     position: absolute;
-    left: 45%;
-    top: 10px;
+    left: 700px;
+    top: 65px;
     z-index: 0;
 }
 
-button#emcee
-{
-    position: relative;
-    z-index: 2;   
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
 }
+
+
 
 /* The Modal (background) */
 .modal {
@@ -63,7 +69,7 @@ button#emcee
   /* Add Animation - Zoom in the Modal */
   .modal-content, #caption {
     animation-name: zoom;
-    animation-duration: 0.6s;
+    animation-duration: 1.0s;
   }
   
   @keyframes zoom {
