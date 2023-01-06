@@ -5,14 +5,18 @@
   padding: 10px;
   z-index: 3;
   position: relative;
+  
 }
 
-#header.item {
-  letter-spacing: 100px;
+#header .item {
+  letter-spacing: 10px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 10px;
   vertical-align: middle;
-  color: black;
+}
+
+#header .item:hover {
+  background-color: rgb(196, 147, 155);
 }
 
 
